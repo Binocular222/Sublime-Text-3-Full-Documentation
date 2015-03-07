@@ -6,7 +6,7 @@ class expand_to_bracketCommand(sublime_plugin.TextCommand): # initiate TextComma
         for sel in sels:                                    # Loop through each region (user may have multiple selection)
             if self.view.substr(sel).find('{') != -1:       # Method substr(sel) return string inside "sel" region. Method find('{') check if there's "{" Then:
                 braces = True
-        if not braces:                                      # After looping trough all "sels" region, if no "{" found (braces = False)
+        if not braces:                                      # After looping through all "sels" region, if no "{" found (braces = False)
             new_sels = []
             for sel in sels:
                 new_sels.append(self.view.find('\}', sel.end()))
